@@ -1,1 +1,15 @@
+# Problem 14: Finding the Percentage
+# https://www.hackerrank.com/challenges/finding-the-percentage/problem
 
+if __name__ == '__main__':
+    n = int(input())
+    student_marks = {}
+
+    for _ in range(n):
+        name, *scores = input().split()
+        scores = list(map(float, scores))
+        student_marks[name] = scores
+
+    query_name = input()
+    marks = student_marks[query_name]
+    print(f"{sum(marks) / len(marks):.2f}")
